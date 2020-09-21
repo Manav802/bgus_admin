@@ -981,7 +981,15 @@ const Dashboard = [{
       path: '/app/apps/ecommerce/product-list',
       title: 'sidenav.apps.ecommerce.productList',
       icon: '',
-      breadcrumb: true,
+      breadcrumb: false,
+      submenu: []
+    },
+    {
+      key: 'service-quotes',
+      path: '/app/apps/ecommerce/service-quotes',
+      title: 'Service Quotes',
+      icon: '',
+      breadcrumb: false,
       submenu: []
     },
   ]
