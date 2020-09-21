@@ -1,19 +1,10 @@
 [
 	{
-        "id": 12,
-        "name": "Blue Jacket",
-        "image": "/img/thumbs/thumb-7.jpg",
-        "category": "Cloths",
-        "price": 77,
-        "stock": 46
+        "name": "Sunny",
+"email": "ssareen@bgunifiedsolutions.net",
+"phone": 0290950000,
+"message": "Test VM required",
+"serviceName": "Infrastructure As A Service",
+"serviceDescription": "Base Server (Business), 104 GB Additional Storage , 76 GB Memory,Enabled Daily Backup , 12 Additional vCPUs"
     },
-    {
-        "id": 13,
-        "name": "White Backpack",
-        "image": "/img/thumbs/thumb-8.jpg",
-        "category": "Bags",
-        "price": 139,
-        "stock": 28
-    }
-    
 ]

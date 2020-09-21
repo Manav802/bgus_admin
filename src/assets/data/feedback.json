@@ -1,19 +1,9 @@
 [
-	{
-        "id": 12,
-        "name": "Blue Jacket",
-        "image": "/img/thumbs/thumb-7.jpg",
-        "category": "Cloths",
-        "price": 77,
-        "stock": 46
-    },
     {
-        "id": 13,
-        "name": "White Backpack",
-        "image": "/img/thumbs/thumb-8.jpg",
-        "category": "Bags",
-        "price": 139,
-        "stock": 28
+        "name": "Manav Chhabra",
+"email": "manavchhabraj7@gmail.com",
+"phone": 7015373632,
+"rating": 4,
+"description": "Maza hi aagya bhai"
     }
-    
 ]
