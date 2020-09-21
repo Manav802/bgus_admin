@@ -6,7 +6,7 @@ import Logo from './Logo';
 import NavNotification from './NavNotification';
 import NavProfile from './NavProfile';
 import NavLanguage from './NavLanguage';
-import NavPanel from './NavPanel';
+// import NavPanel from './NavPanel';
 import NavSearch  from './NavSearch';
 import SearchInput from './NavSearch/SearchInput.js'
 import { toggleCollapsedNav, onMobileNavToggle } from 'redux/actions/Theme';
@@ -75,10 +75,10 @@ export const HeaderNav = props => {
             </Menu>
           </div>
           <div className="nav-right">
-            <NavNotification />
-            <NavLanguage />
-            <NavProfile />
-            <NavPanel />
+            {/* <NavNotification /> */}
+            {/* <NavLanguage /> */}
+            {/* <NavProfile /> */}
+            {/* <NavPanel /> */}
           </div>
           <NavSearch active={searchActive} close={onSearchClose}/>
         </div>
