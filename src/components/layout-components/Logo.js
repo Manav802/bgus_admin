@@ -29,7 +29,7 @@ const getLogo = (props) => {
     if(navCollapsed) {
       return '/img/logo-sm-white.png'
     }
-    return '/img/bg-logo.png'
+    return '/img/bg-logo-black.png'
   }
 
   if (navCollapsed) {

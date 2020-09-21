@@ -10,6 +10,6 @@ export const THEME_CONFIG = {
 	locale: 'en',
 	navType: NAV_TYPE_SIDE,
 	topNavColor: '#3e82f7',
-	headerNavColor: '#F32222',
+	headerNavColor: '#ffffff',
 	mobileNav: false
 };
