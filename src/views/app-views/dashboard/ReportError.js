@@ -37,11 +37,11 @@ export class MailItem extends Component {
 		this.loadMail()
 	}
 
-	// componentDidUpdate(prevProps) {
-	// 	if (this.props.location.pathname !== prevProps.location.pathname) {
-	// 		this.loadMail()
-	// 	}
-	// }
+	componentDidUpdate(prevProps) {
+		if (this.props.location.pathname !== prevProps.location.pathname) {
+			this.loadMail()
+		}
+	}
 
 	loadMail = () => {
 		const data = this.getCurrentCategory()
