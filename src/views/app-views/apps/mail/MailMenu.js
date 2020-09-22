@@ -33,6 +33,11 @@ export class MailMenu extends Component {
 						<span>Inbox</span>
 						<Link to={`${match.url}/inbox`}/>
 					</Menu.Item>
+					<Menu.Item key={`${match.url}/service_quotes`}>
+						<InboxOutlined />
+						<span>Service Quotes</span>
+						<Link to={`${match.url}/service_quotes`}/>
+					</Menu.Item>
 					<Menu.Item key={`${match.url}/sent`}>
 						<MailOutlined />
 						<span>Sent</span>

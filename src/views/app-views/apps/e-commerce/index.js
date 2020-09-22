@@ -14,7 +14,7 @@ const Ecommerce = props => {
 			<Route path={`${match.url}/add-product`} component={AddProduct} />
 			<Route path={`${match.url}/edit-product/:id`} component={EditProduct} />
 			<Route path={`${match.url}/product-list`} component={ProductList} />
-			<Route path={`${match.url}/service-quotes`} component={ServiceQuotes} />
+			<Route path={`${match.url}/service_quotes`} component={ServiceQuotes} />
 			<Route path={`${match.url}/orders`} component={Orders} />
 		</Switch>
 	)

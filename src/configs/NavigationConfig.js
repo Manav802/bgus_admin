@@ -999,7 +999,7 @@ const Dashboard = [{
 const navigationConfig = [
   ...Dashboard,
   // ...dashBoardNavTree,
-  // ...appsNavTree,
+  ...appsNavTree,
   // ...componentsNavTree,
   // ...extraNavTree,
   // ...docsNavTree

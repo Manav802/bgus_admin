@@ -229,6 +229,32 @@
 			]
 		}
 	],
+	"service_quotes":[
+		{
+			"id": 2,
+			"name": "Keysang Yonthan",
+			"label": "works",
+			"starred": false,
+			"avatar": "/img/avatars/thumb-2.jpg",
+			"title": "Lorem Ipsum is FAKE TEXT!",
+			"date": "9:35PM",
+			"to": "nathan@themenate.com",
+			"content": "<p>Hi Nathan,</p><p>All of the words in Lorem Ipsum have flirted with me - consciously or unconsciously. That's to be expected. We have so many things that we have to do better</p> <p>The concept of Lorem Ipsum was created by and for the Chinese in order to make U.S. design jobs non-competitive. I think my strongest asset maybe by far is my temperament. I have a placeholding temperament. The other thing with Lorem Ipsum is that you have to take out its family. The other thing with Lorem Ipsum is that you have to take out its family.</p><p>An ‘extremely credible source' has called my office and told me that Barack Obama's placeholder text is a fraud. Lorem Ipsum is unattractive, both inside and out. I fully understand why it's former users left it for something else. They made a good decision.</p><br/><p>Terrance Moreno<br/> Chief Officer</p>",
+			"checked" : false,
+			"attachment": [
+				{
+					"file": "Prospectus.pdf",
+					"size": "219KB",
+					"type": "pdf"
+				},
+				{
+					"file": "Company_img.jpg",
+					"size": "152KB",
+					"type": "jpg"
+				}
+			]
+		}
+	],
 	"draft": [
 		
 	],
