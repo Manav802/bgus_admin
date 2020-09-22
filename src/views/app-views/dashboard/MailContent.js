@@ -9,7 +9,7 @@ export class MailContent extends Component {
 		const { match } = this.props
 		return (
 			<Switch>
-				<Route path={`${match.url}/compose`} component={MailCompose} />
+				{/* <Route path={`${match.url}/compose`} component={MailCompose} /> */}
 				<Route path={`${match.url}/:category/:id`} component={MailDetail} />
 				<Route exact path={`${match.url}/:category`} component={MailItem} />
 			</Switch>
