@@ -124,8 +124,6 @@ export class MailItem extends Component {
 		switch (category) {
 			case 'inbox':
 				return MailData.inbox
-			case 'service_quotes':
-				return MailData.service_quotes
 			case 'sent':
 				return MailData.sent
 			case 'draft':
