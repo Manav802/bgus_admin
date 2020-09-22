@@ -65,6 +65,10 @@
 
     .mail-detail {
 
+        
+        padding: map-get($spacers, 4);
+        
+
         .mail-detail-action {
             display: flex;
             align-items: center;

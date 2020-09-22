@@ -36,21 +36,21 @@ export const AppLayout = ({ navCollapsed, navType, location }) => {
   return (
     <Layout>
       <HeaderNav isMobile={isMobile}/>
-      {(isNavTop && !isMobile) ? <TopNav routeInfo={currentRouteInfo}/> : null}
-      <Layout className="app-container">
-        {(isNavSide && !isMobile) ? <SideNav routeInfo={currentRouteInfo}/> : null }
-        <Layout className="app-layout" style={{paddingLeft: getLayoutGutter()}}>
+      {/* {(isNavTop && !isMobile) ? <TopNav routeInfo={currentRouteInfo}/> : null} */}
+      {/* <Layout className="app-container"> */}
+        {/* {(isNavSide && !isMobile) ? <SideNav routeInfo={currentRouteInfo}/> : null } */}
+        {/* <Layout className="app-layout" style={{paddingLeft: getLayoutGutter()}}> */}
           <div className={`app-content ${isNavTop ? 'layout-top-nav' : ''}`}>
-            <PageHeader display={currentRouteInfo?.breadcrumb} title={currentRouteInfo?.title} />
-            <Content>
+            {/* <PageHeader display={currentRouteInfo?.breadcrumb} title={currentRouteInfo?.title} /> */}
+            {/* <Content> */}
               <Switch>
                 <Route path="" component={AppViews} />
               </Switch>
-            </Content>
+            {/* </Content> */}
           </div>
           <Footer />
-        </Layout>
-      </Layout>
+        {/* </Layout> */}
+      {/* </Layout> */}
       {isMobile && <MobileNav />}
     </Layout>
   )

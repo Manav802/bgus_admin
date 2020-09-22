@@ -53,7 +53,7 @@ export class MaiDetail extends Component {
 		const { name, avatar, title, date, to, content } = this.state.detail;
 		const { attachment } = this.state;
 		return (
-			<div className={`mail-detail`}>
+			<div className="mail-detail">
 				<div className="d-lg-flex align-items-center justify-content-between">
 					<div className="d-flex align-items-center mb-3">
 						<div className="font-size-md mr-3" onClick={()=> {this.back()}}>

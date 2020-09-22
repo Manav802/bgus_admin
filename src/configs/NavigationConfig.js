@@ -943,66 +943,12 @@ const docsNavTree = [{
   ]
 }]
 
-//This is the array we will use
-
-const Dashboard = [{
-  key: 'dashboards',
-  path: '/app/dashboards',
-  title: 'sidenav.dashboard',
-  icon: DashboardOutlined,
-  breadcrumb: false,
-  submenu: [
-    {
-      key: 'dashboards-default',
-      path: '/app/dashboards/default',
-      title: 'sidenav.dashboard.default',
-      icon: DashboardOutlined,
-      breadcrumb: false,
-      submenu: []
-    },
-    {
-      key: 'dashboards-analytic',
-      path: '/app/dashboards/analytic',
-      title: 'sidenav.dashboard.analytic',
-      icon: DotChartOutlined,
-      breadcrumb: false,
-      submenu: []
-    },
-    {
-      key: 'dashboards-sales',
-      path: '/app/dashboards/sales',
-      title: 'sidenav.dashboard.sales',
-      icon: FundOutlined,
-      breadcrumb: false,
-      submenu: []
-    },
-    {
-      key: 'apps-ecommerce-productList',
-      path: '/app/apps/ecommerce/product-list',
-      title: 'sidenav.apps.ecommerce.productList',
-      icon: '',
-      breadcrumb: false,
-      submenu: []
-    },
-    {
-      key: 'service-quotes',
-      path: '/app/apps/ecommerce/service-quotes',
-      title: 'Service Quotes',
-      icon: '',
-      breadcrumb: false,
-      submenu: []
-    },
-  ]
-}]
-
-
 const navigationConfig = [
-  ...Dashboard,
-  // ...dashBoardNavTree,
-  // ...appsNavTree,
-  // ...componentsNavTree,
-  // ...extraNavTree,
-  // ...docsNavTree
+  ...dashBoardNavTree,
+  ...appsNavTree,
+  ...componentsNavTree,
+  ...extraNavTree,
+  ...docsNavTree
 ]
 
 export default navigationConfig;

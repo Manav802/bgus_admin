@@ -11,7 +11,7 @@ const getLogoWidthGutter = (props, isMobile) => {
   const { navCollapsed, navType } = props;
   const isNavTop = navType === NAV_TYPE_TOP ? true : false
   if(isMobile && !props.mobileLogo) {
-    return 0
+    return "100px"
   }
   if(isNavTop) {
     return 'auto'
@@ -40,7 +40,7 @@ const getLogo = (props) => {
 
 const getLogoDisplay = (isMobile, mobileLogo) => {
   if(isMobile && !mobileLogo) {
-    return 'd-none'
+    return 'logo'
   } else {
     return 'logo'
   }
