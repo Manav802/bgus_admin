@@ -30,6 +30,21 @@ export class MailMenu extends Component {
 						<span>Service Quotes</span>
 						<Link to={`${match.url}/service_quotes`}/>
 					</Menu.Item>
+					<Menu.Item key={`${match.url}/contact_enquiries`}>
+						<InboxOutlined />
+						<span>Contact Enquiries</span>
+						<Link to={`${match.url}/contact_enquiries`}/>
+					</Menu.Item>
+					<Menu.Item key={`${match.url}/report_errors`}>
+						<InboxOutlined />
+						<span>Reported Errors</span>
+						<Link to={`${match.url}/report_errors`}/>
+					</Menu.Item>
+					<Menu.Item key={`${match.url}/user_feedbacks`}>
+						<InboxOutlined />
+						<span>User Feedbacks</span>
+						<Link to={`${match.url}/user_feedbacks`}/>
+					</Menu.Item>
 					<Menu.Item key={`${match.url}/sent`}>
 						<MailOutlined />
 						<span>Sent</span>
