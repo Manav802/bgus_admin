@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import MailData from 'assets/data/mail.data.json';
+import contactEnquiryData from 'assets/data/contactEnquiry';
 import { ReplySVG } from 'assets/svg/icon';
 import { labels, getFileType } from './MailLabels';
 import AvatarStatus from 'components/shared-components/AvatarStatus';
@@ -28,9 +28,9 @@ export class MaiDetail extends Component {
 		const currentId = parseInt(id)
 		let data = []
 		if(labels.includes(category)) {
-			data = MailData.inbox.filter(elm => elm.id === currentId)
+			data = contactEnquiryData.inbox.filter(elm => elm.id === currentId)
 		} else {
-			data = MailData[category].filter(elm => elm.id === currentId)
+			data = contactEnquiryData[category].filter(elm => elm.id === currentId)
 		}
 		const res = data[0]
 		this.setState({
@@ -51,7 +51,7 @@ export class MaiDetail extends Component {
 	}
 
 	render() {
-		const { name, avatar, title, date, to, content } = this.state.detail;
+		const { name, avatar, title, date, from, content, phone } = this.state.detail;
 		const { attachment } = this.state;
 		return (
 			<div className="mail-detail">
@@ -60,7 +60,7 @@ export class MaiDetail extends Component {
 						<div className="font-size-md mr-3" onClick={()=> {this.back()}}>
 							<LeftCircleOutlined className="mail-detail-action-icon font-size-md ml-0" />
 						</div>
-						<AvatarStatus src={avatar} name={name} subTitle={`To: ${to}`}/>
+						<AvatarStatus src={avatar} name={name} subTitle={`From: ${from} || Phone: ${phone}`}/>
 					</div>
 					<div className="mail-detail-action mb-3">
 						<span className="mr-2 font-size-md">{date}</span>
@@ -77,7 +77,7 @@ export class MaiDetail extends Component {
 					</div>
 				</div>
 				<div className="mail-detail-content">
-					<h3 className="mb-4">{title}</h3>
+					<h4 className="mb-4">Subject: {title}</h4>
 					<div dangerouslySetInnerHTML={{ __html: content }} />
 					<div className="mail-detail-attactment">
 						{

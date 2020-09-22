@@ -1,5 +1,5 @@
 {
-    "user_feedback": [
+    "contact_enquiries": [
     {
         "id": 1,
         "name": "Yuvraj Singh Midha",
@@ -10,7 +10,6 @@
         "phone": "7087362779",
         "date": "9:35PM",
         "title": "Response",
-        "rating": "4",
         "content": "<p>Hi Nathan,</p><p>All of the words in Lorem Ipsum have flirted with me - consciously or unconsciously. That's to be expected. We have so many things that we have to do better</p> <p>The concept of Lorem Ipsum was created by and for the Chinese in order to make U.S. design jobs non-competitive. I think my strongest asset maybe by far is my temperament. I have a placeholding temperament. The other thing with Lorem Ipsum is that you have to take out its family. The other thing with Lorem Ipsum is that you have to take out its family.</p><p>An ‘extremely credible source' has called my office and told me that Barack Obama's placeholder text is a fraud. Lorem Ipsum is unattractive, both inside and out. I fully understand why it's former users left it for something else. They made a good decision.</p><br/><p>Terrance Moreno<br/> Chief Officer</p>",
         "checked" : false,
         "attachment": [
@@ -36,7 +35,6 @@
         "phone": "7087362779",
         "date": "9:35PM",
         "title": "UP is a goood movie",
-        "rating": "2",
         "content": "<p>Hi Saurabh,</p><p>UP is a wonderful film, with characters who are as believable as any characters can be who spend much of their time floating above the rain forests of Venezuela. They have tempers, problems and obsessions. They are cute and goofy, but they aren't cute in the treacly way of little cartoon animals. They're cute in the human way of the animation master Hayao Miyazaki. Two of the three central characters are cranky old men, which is a wonder in this youth-obsessed era. UP doesn't think all heroes must be young or sweet, although the third important character is a nervy kid.</p>",
         "checked" : false,
         "attachment": [
@@ -62,7 +60,6 @@
         "phone": "7087362779",
         "date": "9:35PM",
         "title": "Help I need some Milk",
-        "rating": "1",
         "content": "<p>Hi Saurabh,</p><p>Give Me Some MILK</p>",
         "checked" : false,
         "attachment": [
@@ -88,7 +85,6 @@
         "phone": "7087362779",
         "date": "9:35PM",
         "title": "I need some Info",
-        "rating": "3",
         "content": "<p>Hi Saurabh,</p><p>This is high level info that im requesting so I dont want anyone to see this</p>",
         "checked" : false,
         "attachment": [
@@ -113,8 +109,7 @@
         "from": "savemesaveindia@gmail.com",
         "phone": "7087362779",
         "date": "9:35PM",
-        "title": "Hi...We need to talk",
-        "rating": "1",
+        "title": "Hi...",
         "content": "<p>Hi Saurabh,</p><p>I am in danger, I need Z level Web Hosting security</p>",
         "checked" : false,
         "attachment": [

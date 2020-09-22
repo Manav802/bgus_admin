@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import MailData from 'assets/data/mail.data.json';
+import userFeedbackData from 'assets/data/feedback.json';
 import { ReplySVG } from 'assets/svg/icon';
 import { labels, getFileType } from './MailLabels';
 import AvatarStatus from 'components/shared-components/AvatarStatus';
@@ -22,15 +22,28 @@ export class MaiDetail extends Component {
 		attachment: []
 	}
 
+	getEmoji = rating => {
+		switch (rating) {
+			case '1':
+				return '🙁';
+			case '2':
+				return '😐';
+			case '3':
+				return '🙂';
+			case '4':
+				return '😊';
+		}
+	}
+
 	componentDidMount() {
         const category = this.props.category
 		const { id } = this.props.match.params
 		const currentId = parseInt(id)
 		let data = []
 		if(labels.includes(category)) {
-			data = MailData.inbox.filter(elm => elm.id === currentId)
+			data = userFeedbackData.inbox.filter(elm => elm.id === currentId)
 		} else {
-			data = MailData[category].filter(elm => elm.id === currentId)
+			data = userFeedbackData[category].filter(elm => elm.id === currentId)
 		}
 		const res = data[0]
 		this.setState({
@@ -51,7 +64,7 @@ export class MaiDetail extends Component {
 	}
 
 	render() {
-		const { name, avatar, title, date, to, content } = this.state.detail;
+		const { name, avatar, title, date, from, content, phone, rating } = this.state.detail;
 		const { attachment } = this.state;
 		return (
 			<div className="mail-detail">
@@ -60,7 +73,7 @@ export class MaiDetail extends Component {
 						<div className="font-size-md mr-3" onClick={()=> {this.back()}}>
 							<LeftCircleOutlined className="mail-detail-action-icon font-size-md ml-0" />
 						</div>
-						<AvatarStatus src={avatar} name={name} subTitle={`To: ${to}`}/>
+						<AvatarStatus src={avatar} name={name} subTitle={`From: ${from} || Phone: ${phone}`}/>
 					</div>
 					<div className="mail-detail-action mb-3">
 						<span className="mr-2 font-size-md">{date}</span>
@@ -77,8 +90,10 @@ export class MaiDetail extends Component {
 					</div>
 				</div>
 				<div className="mail-detail-content">
+				<h5 className="mb-4">{`Rating: ${this.getEmoji(rating)}`}</h5>
 					<h3 className="mb-4">{title}</h3>
 					<div dangerouslySetInnerHTML={{ __html: content }} />
+					
 					<div className="mail-detail-attactment">
 						{
 							attachment.map( (elm, i) => (
@@ -92,6 +107,7 @@ export class MaiDetail extends Component {
 							))
 						}
 					</div>
+					
 				</div>
 			</div>
 		)

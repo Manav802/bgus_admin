@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Table, Avatar, Badge, Tooltip, Dropdown, Menu, Input } from 'antd';
 import { StarOutlined, StarFilled, DeleteOutlined, TagOutlined } from '@ant-design/icons';
-import MailData from "assets/data/mail.data.json";
+import ContactEnquiryData from "assets/data/contactEnquiry.json";
 import { labels, getLabelColor } from "./MailLabels";
 
 export class MailItem extends Component {
@@ -120,21 +120,21 @@ export class MailItem extends Component {
         const category  = this.props.category;
         console.log(this.props)
 		if(labels.includes(category)) {
-			return MailData.inbox.filter( elm => elm.label === category )
+			return ContactEnquiryData.inbox.filter( elm => elm.label === category )
 		}
 		switch (category) {
 			case 'inbox':
-				return MailData.inbox
-			case 'service_quotes':
-				return MailData.service_quotes
+				return ContactEnquiryData.inbox
+			case 'contact_enquiries':
+				return ContactEnquiryData.contact_enquiries
 			case 'sent':
-				return MailData.sent
+				return ContactEnquiryData.sent
 			case 'draft':
-				return MailData.draft
+				return ContactEnquiryData.draft
 			case 'starred':
-				return  MailData.inbox.filter( elm => elm.starred )
+				return  ContactEnquiryData.inbox.filter( elm => elm.starred )
 			case 'deleted':
-				return  MailData.deleted
+				return  ContactEnquiryData.deleted
 			default:
 				break;
 		}
@@ -231,7 +231,9 @@ export class MailItem extends Component {
 				render: (_, elm) => (
 					<div className=" mail-list-content-msg">
 						<Badge color={getLabelColor(elm.label)}/>
-						<span className="font-weight-semibold text-dark ml-1">{elm.title}</span>
+						<span className="font-weight-semibold text-dark ml-1">{elm.from}</span>
+						<span className="mx-2"> - </span>
+					<span className="font-weight-semibold text-dark ml-1">{elm.title}</span>
 						<span className="mx-2"> - </span>
 						<span className="p mb-0">{this.formatBody(elm.content)}</span>
 					</div>

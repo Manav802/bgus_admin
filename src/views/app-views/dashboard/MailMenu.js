@@ -40,10 +40,10 @@ export class MailMenu extends Component {
 						<span>Reported Errors</span>
 						<Link to={`${match.url}/report_errors`}/>
 					</Menu.Item>
-					<Menu.Item key={`${match.url}/user_feedbacks`}>
+					<Menu.Item key={`${match.url}/user_feedback`}>
 						<InboxOutlined />
 						<span>User Feedbacks</span>
-						<Link to={`${match.url}/user_feedbacks`}/>
+						<Link to={`${match.url}/user_feedback`}/>
 					</Menu.Item>
 					<Menu.Item key={`${match.url}/sent`}>
 						<MailOutlined />
