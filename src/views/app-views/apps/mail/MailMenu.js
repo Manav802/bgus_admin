@@ -15,14 +15,6 @@ export class MailMenu extends Component {
 		const { match, location } = this.props
 		return (
 			<div className="w-100">
-				<div className="p-3">
-					<Link to={`${match.url}/compose`}>
-						<Button type="primary" block>
-							<EditOutlined />
-							<span>Compose</span>
-						</Button>
-					</Link>
-				</div>
 				<Menu
 					defaultSelectedKeys={`${match.url}/inbox/1`}
 					mode="inline"

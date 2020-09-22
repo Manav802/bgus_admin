@@ -54,19 +54,17 @@ export const HeaderNav = props => {
         <div className="nav" style={{width: `calc(100% - ${getNavWidth()})`}}>
           <div className="nav-left">
             <Menu mode="horizontal">
-              {
+              {/* {
                 isNavTop && !isMobile ?
                 null
                 :
                 <Menu.Item key="0" onClick={() => {onToggle()}}>
                   {navCollapsed || isMobile ? <MenuUnfoldOutlined className="nav-icon" /> : <MenuFoldOutlined className="nav-icon" />}
                 </Menu.Item>
-              }
+              } */}
               {
                 isMobile ?
-                <Menu.Item key="1" onClick={() => {onSearchActive()}}>
-                  <SearchOutlined />
-                </Menu.Item>
+                null
                 :
                 <Menu.Item key="1" style={{cursor: 'auto'}}>
                   <SearchInput mode={mode} isMobile={isMobile} />
@@ -77,7 +75,7 @@ export const HeaderNav = props => {
           <div className="nav-right">
             {/* <NavNotification /> */}
             {/* <NavLanguage /> */}
-            {/* <NavProfile /> */}
+            <NavProfile />
             {/* <NavPanel /> */}
           </div>
           <NavSearch active={searchActive} close={onSearchClose}/>
