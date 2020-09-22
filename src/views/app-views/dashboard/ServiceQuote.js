@@ -205,10 +205,10 @@ export class MailItem extends Component {
 				),
 				colSpan: 4,
 				dataIndex: 'name',
-				className: 'mail-list-sender',
+				className: 'service_username',
 				render: (_, elm) => (
 					<div className="d-flex align-items-center">
-						<div 
+						{/* <div 
 							onClick={(e) => {
 								e.stopPropagation()
 								this.onStarTicked(elm)
@@ -216,7 +216,7 @@ export class MailItem extends Component {
 						  className={`mail-list-star font-size-md ${elm.starred? 'checked' : 'uncheck'}`}
 						>
 							{elm.starred? <StarFilled /> : <StarOutlined />}
-						</div>
+						</div> */}
 						<div className="d-flex align-items-center">
 							{/* <Avatar src={elm.avatar} size={30}/> */}
 							<h4 className="mb-0 ml-2">{elm.name}</h4>
@@ -230,10 +230,10 @@ export class MailItem extends Component {
 				className: 'mail-list-content',
 				render: (_, elm) => (
 					<div className=" mail-list-content-msg">
-						<Badge color={getLabelColor(elm.label)}/>
-						<span className="font-weight-semibold text-dark ml-1">{elm.title}</span>
+						{/* <Badge color={getLabelColor(elm.label)}/> */}
+						<span className="font-weight-semibold text-dark ml-1">{elm.serviceName}</span>
 						<span className="mx-2"> - </span>
-						<span className="p mb-0">{this.formatBody(elm.content)}</span>
+						<span className="p mb-0">{this.formatBody(elm.serviceDescription)}</span>
 					</div>
 				)
 			},
