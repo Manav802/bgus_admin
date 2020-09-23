@@ -36,7 +36,7 @@ const menuItem = [
 ]
 
 export const NavProfile = ({signOut}) => {
-  const profileImg = "/img/avatars/thumb-1.jpg";
+  const profileImg = "/img/avatars/Closeup.jpg";
   const profileMenu = (
     <div className="nav-profile nav-dropdown">
       <div className="nav-profile-header">
@@ -71,7 +71,7 @@ export const NavProfile = ({signOut}) => {
     </div>
   );
   return (
-    <Dropdown placement="bottomRight" overlay={profileMenu} trigger={["click"]}>
+    <Dropdown overlay={profileMenu} trigger={["click"]}>
       <Menu className="d-flex align-item-center" mode="horizontal">
         <Menu.Item>
           <Avatar src={profileImg} />

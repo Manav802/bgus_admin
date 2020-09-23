@@ -26,13 +26,13 @@ export class MaiDetail extends Component {
 
 	componentDidMount() {
         const category = this.props.category
-		const { id } = this.props.match.params
-		const currentId = parseInt(id)
+		const { _id } = this.props.match.params
+		const currentId = _id
 		let data = []
 		if(labels.includes(category)) {
-			data = MailData.inbox.filter(elm => elm.id === currentId)
+			data = MailData.inbox.filter(elm => elm._id === currentId)
 		} else {
-			data = MailData[category].filter(elm => elm.id === currentId)
+			data = MailData[category].filter(elm => elm._id === currentId)
 		}
 		const res = data[0]
 		this.setState({
@@ -81,9 +81,11 @@ export class MaiDetail extends Component {
 					</div>
 					<div className="mail-detail-action mb-3">
 						<span className="mr-2 font-size-md">{date}</span>
+						<a href={`mailto:${email}`}>
 						<Tooltip title="Reply">
 							<CustomIcon className="mail-detail-action-icon" svg={ReplySVG} />
 						</Tooltip>
+						</a>
 						{/* <Tooltip title="Star" onClick={()=>{this.tick()}}>
 							{this.state.starred? <StarFilled className="mail-detail-action-icon star checked" /> : <StarOutlined className="mail-detail-action-icon star" />}
 						</Tooltip> */}

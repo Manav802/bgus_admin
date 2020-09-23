@@ -16,11 +16,11 @@ export class MailContent extends Component {
 		return (
 			<Switch>
 				{/* <Route path={`${match.url}/compose`} component={MailCompose} /> */}
-				<Route path={`${match.url}/service_quotes/:id`} component={(props)=><ServiceQuoteDetail category="service_quotes" {...props}/>} />
-				<Route path={`${match.url}/contact_enquiries/:id`} component={(props)=><ContactEnquiryDetail category="contact_enquiries" {...props}/>} />
-				<Route path={`${match.url}/report_errors/:id`} component={(props)=><ReportErrorDetail category="report_errors" {...props}/>} />
-				<Route path={`${match.url}/user_feedback/:id`} component={(props)=><UserFeedbackDetail category="user_feedback" {...props}/>} />
-				{/* <Route path={`${match.url}/:category/:id`} component={MailDetail} /> */}
+				<Route path={`${match.url}/service_quotes/:_id`} component={(props)=><ServiceQuoteDetail category="service_quotes" {...props}/>} />
+				<Route path={`${match.url}/contact_enquiries/:_id`} component={(props)=><ContactEnquiryDetail category="contact_enquiries" {...props}/>} />
+				<Route path={`${match.url}/report_errors/:_id`} component={(props)=><ReportErrorDetail category="report_errors" {...props}/>} />
+				<Route path={`${match.url}/user_feedback/:_id`} component={(props)=><UserFeedbackDetail category="user_feedback" {...props}/>} />
+				{/* <Route path={`${match.url}/:category/:_id`} component={MailDetail} /> */}
 				<Route exact path={`${match.url}/service_quotes`} component={ServiceQuote} />
 				<Route exact path={`${match.url}/contact_enquiries`} component={ContactEnquiry } />
 				<Route exact path={`${match.url}/report_errors`} component={ReportError} />

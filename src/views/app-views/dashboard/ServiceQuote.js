@@ -110,7 +110,7 @@ export class MailItem extends Component {
 		let query = e.target.value.toLowerCase();;
 		let data = []
 		data = this.getCurrentCategory().filter(item => {
-			return query === ''? item : item.name.toLowerCase().includes(query)
+			return query === ''? item : item.name.toLowerCase().includes(query) || item.serviceName.toLowerCase().includes(query)
 		});
 		this.setState({
 			mails: data
@@ -118,7 +118,7 @@ export class MailItem extends Component {
 	}
 
 	getCurrentCategory = () => {
-        
+        // Input = Array of objects
 		if(this.props.deleted) {
 			return MailData.service_quotes.filter( elm => elm.archived === true )
 		}
@@ -130,8 +130,10 @@ export class MailItem extends Component {
 	}
 
 	render() {
+		
 		const { match, history } = this.props
 		const { selectedRowKeys } = this.state;
+		
     const rowSelection = {
 			selectedRowKeys,
 			onChange: this.onSelectChange,
@@ -260,11 +262,11 @@ export class MailItem extends Component {
 								e.preventDefault()
 								if(this.props.deleted){}
 								else{
-								history.push(`${match.url}/${elm.id}`)}
+								history.push(`${match.url}/${elm._id}`)}
 							}
 						};
 					}}
-					rowKey='id'
+					rowKey='_id'
 				/>
 			</div>
 		)

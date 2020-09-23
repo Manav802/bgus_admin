@@ -123,7 +123,7 @@ export class MailItem extends Component {
 		let query = e.target.value.toLowerCase();;
 		let data = []
 		data = this.getCurrentCategory().filter(item => {
-			return query === ''? item : item.name.toLowerCase().includes(query)
+			return query === ''? item : item.name.toLowerCase().includes(query) || item.description.toLowerCase().includes(query)
 		});
 		this.setState({
 			mails: data
@@ -267,14 +267,14 @@ export class MailItem extends Component {
 					onRow={(elm) => {
 						return {
 							onClick: e => {
+								e.preventDefault()
 								if(this.props.deleted){}
 								else{
-								e.preventDefault()
-								history.push(`${match.url}/${elm.id}`)}
+								history.push(`${match.url}/${elm._id}`)}
 							}
 						};
 					}}
-					rowKey='id'
+					rowKey='_id'
 				/>
 			</div>
 		)
