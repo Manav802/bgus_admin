@@ -25,21 +25,14 @@ export class MaiDetail extends Component {
 	}
 
 	componentDidMount() {
-        const category = this.props.category
-		const { _id } = this.props.match.params
-		const currentId = _id
-		let data = []
-		if(labels.includes(category)) {
-			data = MailData.inbox.filter(elm => elm._id === currentId)
-		} else {
-			data = MailData[category].filter(elm => elm._id === currentId)
+        if(this.props.location.data){
+			this.setState({
+				detail: this.props.location.data[0],
+			})
 		}
-		const res = data[0]
-		this.setState({
-			detail: res,
-			starred: res.starred,
-			attachment: res.attachment
-		})
+		else{
+			this.back()
+		}
 	}
 
 	tick() {
@@ -62,6 +55,8 @@ export class MaiDetail extends Component {
 				return '🙂';
 			case '4':
 				return '😊';
+			default: 
+				return ''
 		}
 	}
 

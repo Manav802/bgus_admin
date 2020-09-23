@@ -5,10 +5,10 @@ const { connection } = require('./connection');
 exports.connectionDB = async () => {
   try {
     mongoose.connect(connection,
-    { useUnifiedTopology: true ,useNewUrlParser: true,useCreateIndex: true },(err, data)=>{
+    { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true},(err, data)=>{
       
         if(err){ 
-          console.log("Database is not connecting");
+          throw err;
         }
         else{
           console.log("DB Connected")

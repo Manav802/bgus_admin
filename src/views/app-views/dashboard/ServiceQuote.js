@@ -1,12 +1,11 @@
 import React, { Component } from 'react'
 import { Table, Avatar, Badge, Tooltip, Dropdown, Menu, Input } from 'antd';
 import { StarOutlined, StarFilled, DeleteOutlined, TagOutlined,UndoOutlined } from '@ant-design/icons';
-import MailData from "assets/data/mail.data.json";
-import { labels, getLabelColor } from "./MailLabels";
 import {withRouter} from 'react-router-dom';
+import {fetchServices, archiveServices} from "../../../services/services";
 
 export class MailItem extends Component {
-
+	
 	state = {
 		mails: [],
 		selectedRowKeys: [],
@@ -45,23 +44,30 @@ export class MailItem extends Component {
 	}
 
 	loadMail = () => {
-		const data = this.getCurrentCategory()
-
-		this.setState({
-			mails: data,
-			selectedRowKeys: []
+		
+		fetchServices(this.props.deleted ? "true" : "false").then(res => {
+			console.log(res);
+			this.setState({
+				mails: res.data.data,
+				selectedRowKeys: []
+			})
 		})
+		
+		
 	}
 
-	massDeleted = selectedKey => {
-		let data = this.state.mails
-		selectedKey.forEach(num => {
-			data = data.filter(elm => elm.id !== num)
-		});
-		this.setState({
-			mails: data,
-			selectedRowKeys: []
+	massDeleted = (selectedKey, value) => {
+		archiveServices(selectedKey, value).then(res => {
+			let data = this.state.mails
+			selectedKey.forEach(num => {
+				data = data.filter(elm => elm._id !== num)
+			});
+			this.setState({
+				mails: data,
+				selectedRowKeys: []
+			})
 		})
+		
 	}
 
 	massStar = selectedKey => {
@@ -107,28 +113,17 @@ export class MailItem extends Component {
 	}
 
 	search = e => {
-		let query = e.target.value.toLowerCase();;
-		let data = []
-		data = this.getCurrentCategory().filter(item => {
-			return query === ''? item : item.name.toLowerCase().includes(query) || item.serviceName.toLowerCase().includes(query)
-		});
-		this.setState({
-			mails: data
-		});
+		// let query = e.target.value.toLowerCase();;
+		// let data = this.state.mails
+		// data = this.state.mails.filter(item => {
+		// 	return query === ''? item : item.name.toLowerCase().includes(query) || item.serviceName.toLowerCase().includes(query)
+		// });
+		// this.setState({
+		// 	mails: data
+		// });
 	}
 
-	getCurrentCategory = () => {
-        // Input = Array of objects
-		if(this.props.deleted) {
-			return MailData.service_quotes.filter( elm => elm.archived === true )
-		}
-		
-		
-		return MailData.service_quotes.filter( elm => elm.archived != true )
-
-		
-	}
-
+	
 	render() {
 		
 		const { match, history } = this.props
@@ -176,13 +171,13 @@ export class MailItem extends Component {
 									</Dropdown> */}
 									
 									{(this.props.deleted===true) ?
-									<span className="mail-list-action-icon ml-0" onClick={() => {this.massDeleted(this.state.selectedRowKeys)}}>
+									<span className="mail-list-action-icon ml-0" onClick={() => {this.massDeleted(this.state.selectedRowKeys, false)}}>
 										<Tooltip title="Restore">
 											<UndoOutlined />
 										</Tooltip>
 									</span>
 									:
-									<span className="mail-list-action-icon ml-0" onClick={() => {this.massDeleted(this.state.selectedRowKeys)}}>
+									<span className="mail-list-action-icon ml-0" onClick={() => {this.massDeleted(this.state.selectedRowKeys, true)}}>
 										<Tooltip title="Delete">
 											<DeleteOutlined />
 										</Tooltip>
@@ -233,7 +228,7 @@ export class MailItem extends Component {
 						{/* <Badge color={getLabelColor(elm.label)}/> */}
 						<span className="font-weight-semibold text-dark ml-1">{elm.serviceName}</span>
 						<span className="mx-2"> - </span>
-						<span className="p mb-0">{this.formatBody(elm.serviceDescription.toString())}</span>
+						<span className="p mb-0">{this.formatBody(elm.serviceArray.toString())}</span>
 					</div>
 				)
 			},
@@ -262,7 +257,11 @@ export class MailItem extends Component {
 								e.preventDefault()
 								if(this.props.deleted){}
 								else{
-								history.push(`${match.url}/${elm._id}`)}
+									history.push({
+										pathname:`${match.url}/${elm._id}`,
+										data: this.state.mails.filter(mail => mail._id === elm._id)
+									})
+							}
 							}
 						};
 					}}

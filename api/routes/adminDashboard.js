@@ -6,24 +6,24 @@ const Router = express.Router()
 
 
 // Get All Contacts 
-Router.get('/contact/all',isSignedIn,isAdmin, getContacts)
+Router.get('/contact/all', getContacts)
 
 //Get All  Feedbacks
-Router.get('/feedback/all',isSignedIn,isAdmin,getFeedbacks)
+Router.get('/feedback/all',getFeedbacks)
 
 //Get all  Reports 
-Router.get('/report/all',isSignedIn,isAdmin,getReports)
+Router.get('/report/all',getReports)
 
 //Get all  Service Demands
-Router.get('/service/all',isSignedIn,isAdmin,getServices)
+Router.get('/service/all', getServices)
 
 
 
 // toggling API
-Router.put('/contact/delete',isSignedIn,isAdmin,deleteContacts)
-Router.put('/feedback/delete',isSignedIn,isAdmin,deleteFeedbacks)
-Router.put('/report/delete',isSignedIn,isAdmin,deleteReports)
-Router.put('/service/delete',isSignedIn,isAdmin,deleteServices)
+Router.put('/contact/delete',deleteContacts)
+Router.put('/feedback/delete',deleteFeedbacks)
+Router.put('/report/delete',deleteReports)
+Router.put('/service/delete',deleteServices)
 
 
 //exporting the module

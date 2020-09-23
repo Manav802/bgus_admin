@@ -24,19 +24,22 @@ function Deleted() {
             case "4":
                 setSelected("User Feedbacks")
                 break;
+            default:
+              setSelected("Service Quotes")
         }
       }
     
     const SelectedComponent=(s)=> {
     switch(s){
-        case "Service Quotes":
-            return <ServiceQuote deleted/>
+        
         case "Contact Enquiries":
             return <ContactEnquiry deleted/>
         case "Reported Errors":
             return <ReportError deleted/>
         case "User Feedbacks":
             return <UserFeedback deleted/>
+        default:
+            return <ServiceQuote deleted/>
     }
     }
     const menu = (

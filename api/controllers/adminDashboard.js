@@ -64,7 +64,7 @@ exports.getReports = async(req, res)=>{
             })
         }
         else{
-            Contact.find({archive})
+            Report.find({archive})
             .then(result=>{
                 return res.status(200).json({
                     success:true,
@@ -103,7 +103,7 @@ exports.getFeedbacks = async(req, res)=>{
             })
         }
         else{
-            Contact.find({archive})
+            Feedback.find({archive})
             .then(result=>{
                 return res.status(200).json({
                     success:true,
@@ -139,7 +139,7 @@ exports.getServices= async(req, res)=>{
             })
         }
         else{
-            Contact.find({archive})
+            Service.find({archive})
             .then(result=>{
                 return res.status(200).json({
                     success:true,
@@ -164,7 +164,7 @@ exports.getServices= async(req, res)=>{
 exports.deleteContacts = async(req,res)=>{
     try{
         // testing conditions
-        const {idCollection} = req.body
+        const {idCollection, value} = req.body
         
         //testing condition
         if(idCollection.length === 0 ||  (!Array.isArray(idCollection))){
@@ -173,7 +173,7 @@ exports.deleteContacts = async(req,res)=>{
         else{
             Contact.update(
                 { _id: { $in:idCollection } },
-                { $set: {archive:true} },
+                { $set: {archive:value} },
                 {multi: true}
             )
             .then(result=>{
@@ -197,7 +197,7 @@ exports.deleteContacts = async(req,res)=>{
 exports.deleteServices = async(req,res)=>{
     try{
         // testing conditions
-        const {idCollection} = req.body
+        const {idCollection, value} = req.body
         
         //testing condition
         if(idCollection.length === 0 ||  (!Array.isArray(idCollection))){
@@ -206,7 +206,7 @@ exports.deleteServices = async(req,res)=>{
         else{
             Service.update(
                 { _id: { $in:idCollection } },
-                { $set: {archive:true} },
+                { $set: {archive:value} },
                 {multi: true}
             )
             .then(result=>{
@@ -230,7 +230,7 @@ exports.deleteServices = async(req,res)=>{
 exports.deleteFeedbacks = async(req,res)=>{
     try{
         // testing conditions
-        const {idCollection} = req.body
+        const {idCollection, value} = req.body
         
         //testing condition
         if(idCollection.length === 0 ||  (!Array.isArray(idCollection))){
@@ -239,7 +239,7 @@ exports.deleteFeedbacks = async(req,res)=>{
         else{
             Feedback.update(
                 { _id: { $in:idCollection } },
-                { $set: {archive:true} },
+                { $set: {archive:value} },
                 {multi: true}
             )
             .then(result=>{
@@ -264,7 +264,7 @@ exports.deleteFeedbacks = async(req,res)=>{
 exports.deleteReports = async(req,res)=>{
     try{
         // testing conditions
-        const {idCollection} = req.body
+        const {idCollection, value} = req.body
         
         //testing condition
         if(idCollection.length === 0 ||  (!Array.isArray(idCollection))){
@@ -273,7 +273,7 @@ exports.deleteReports = async(req,res)=>{
         else{
             Report.update(
                 { _id: { $in:idCollection } },
-                { $set: {archive:true} },
+                { $set: {archive:value} },
                 {multi: true}
             )
             .then(result=>{
