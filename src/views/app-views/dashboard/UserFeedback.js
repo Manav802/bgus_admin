@@ -221,7 +221,7 @@ export class MailItem extends Component {
 				className: 'mail-list-sender',
 				render: (_, elm) => (
 					<div className="d-flex align-items-center">
-						<div 
+						{/* <div 
 							onClick={(e) => {
 								e.stopPropagation()
 								this.onStarTicked(elm)
@@ -229,7 +229,7 @@ export class MailItem extends Component {
 						  className={`mail-list-star font-size-md ${elm.starred? 'checked' : 'uncheck'}`}
 						>
 							{elm.starred? <StarFilled /> : <StarOutlined />}
-						</div>
+						</div> */}
 						<div className="d-flex align-items-center">
 							{/* <Avatar src={elm.avatar} size={30}/> */}
 							<h4 className="mb-0 ml-2">{elm.name}</h4>
@@ -243,8 +243,8 @@ export class MailItem extends Component {
 				className: 'mail-list-content',
 				render: (_, elm) => (
 					<div className=" mail-list-content-msg">
-						<Badge color={getLabelColor(elm.label)}/>
-						<span className="mx-2"> - </span>
+						{/* <Badge color={getLabelColor(elm.label)}/> */}
+						{/* <span className="mx-2"> - </span> */}
 						<span className="font-weight-semibold text-dark ml-1">{this.getEmoji(elm.rating)}</span>
 						<span className="mx-2"> - </span>
 						<span className="font-weight-semibold text-dark ml-1">{elm.title}</span>

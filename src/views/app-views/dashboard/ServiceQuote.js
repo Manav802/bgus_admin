@@ -205,7 +205,7 @@ export class MailItem extends Component {
 				),
 				colSpan: 4,
 				dataIndex: 'name',
-				className: 'service_username',
+				className: 'mail-list-sender',
 				render: (_, elm) => (
 					<div className="d-flex align-items-center">
 						{/* <div 
