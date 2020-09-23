@@ -48,7 +48,7 @@ export class MaiDetail extends Component {
 	render() {
 		
 		const { Text, Link,Paragraph } = Typography;
-		const { name, email, phone, error,description,browser,operatingsystem,device,date } = this.state.detail;
+		const { name, email, contactNumber, error,description,browser,operatingSystem,device,date } = this.state.detail;
 		const { attachment } = this.state;
 		return (
 			<div className="mail-detail">
@@ -81,7 +81,7 @@ export class MaiDetail extends Component {
 					<div dangerouslySetInnerHTML={{ __html: description}} /> <br/>
 					<Space direction="vertical">
 					<div> <Text strong>Device : </Text> {device}</div>
-					<div> <Text strong>Operating System : </Text> {operatingsystem}</div>
+					<div> <Text strong>Operating System : </Text> {operatingSystem}</div>
 					<div> <Text strong>Browser : </Text> {browser}</div>
 					</Space>
 					
@@ -89,7 +89,7 @@ export class MaiDetail extends Component {
 					<Divider dashed/>
 					<div> <Text strong>Name : </Text> {name}</div>
 					<div> <Text strong>Email : </Text> {email}</div>
-					<div> <Text strong>Phone : </Text> {phone}</div>
+					<div> <Text strong>Phone : </Text> {contactNumber}</div>
 					
 					{/* <div className="mail-detail-attactment">
 						{

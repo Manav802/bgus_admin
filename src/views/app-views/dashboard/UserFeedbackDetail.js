@@ -63,7 +63,7 @@ export class MaiDetail extends Component {
 	render() {
 
 		const { Text, Link,Paragraph } = Typography;
-		const { name, email, phone, rating, description,date } = this.state.detail;
+		const { name, email, contactNumber, rating, description,date } = this.state.detail;
 		const { attachment } = this.state;
 		return (
 			<div className="mail-detail">
@@ -99,7 +99,7 @@ export class MaiDetail extends Component {
 					<Divider dashed/>
 					<div> <Text strong>Name : </Text> {name}</div>
 					<div> <Text strong>Email : </Text> {email}</div>
-					<div> <Text strong>Phone : </Text> {phone}</div>
+					<div> <Text strong>Phone : </Text> {contactNumber}</div>
 					
 					{/* <div className="mail-detail-attactment">
 						{
