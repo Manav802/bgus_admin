@@ -14,7 +14,7 @@ export const AppViews = ({match}) => {
         <Route path={`${match.url}/maps`} component={lazy(() => import(`./maps`))} />
         <Route path={`${match.url}/charts`} component={lazy(() => import(`./charts`))} />
         <Route path={`${match.url}/docs`} component={lazy(() => import(`./docs`))} /> */}
-        <Redirect from={`${match.url}`} to={`${match.url}/dashboard/inbox`} />
+        <Redirect from={`${match.url}`} to={`${match.url}/dashboard/service_quotes`} />
       </Switch>
     </Suspense>
   )

@@ -16,15 +16,10 @@ export class MailMenu extends Component {
 		return (
 			<div className="w-100">
 				<Menu
-					defaultSelectedKeys={`${match.url}/inbox/1`}
+				defaultSelectedKeys={`${match.url}/service_quoutes`}
 					mode="inline"
 					selectedKeys={[location.pathname]}
 				>
-					<Menu.Item key={`${match.url}/inbox`}>
-						<InboxOutlined />
-						<span>Inbox</span>
-						<Link to={`${match.url}/inbox`}/>
-					</Menu.Item>
 					<Menu.Item key={`${match.url}/service_quotes`}>
 						<InboxOutlined />
 						<span>Service Quotes</span>
@@ -45,7 +40,7 @@ export class MailMenu extends Component {
 						<span>User Feedbacks</span>
 						<Link to={`${match.url}/user_feedback`}/>
 					</Menu.Item>
-					<Menu.Item key={`${match.url}/sent`}>
+					{/* <Menu.Item key={`${match.url}/sent`}>
 						<MailOutlined />
 						<span>Sent</span>
 						<Link to={`${match.url}/sent`} />
@@ -59,13 +54,13 @@ export class MailMenu extends Component {
 						<StarOutlined />
 						<span>Starred</span>
 						<Link to={`${match.url}/starred`}/>
-					</Menu.Item>
+					</Menu.Item> */}
 					<Menu.Item  key={`${match.url}/deleted`}>
 						<DeleteOutlined />
 						<span>Deleted</span>
 						<Link to={`${match.url}/deleted`}/>
 					</Menu.Item>
-					<Menu.ItemGroup title="Labels">
+					{/* <Menu.ItemGroup title="Labels">
 						<Menu.Item key={`${match.url}/works`}>
 							<Badge color="blue" />
 							<span>Works</span>
@@ -81,7 +76,7 @@ export class MailMenu extends Component {
 							<span>Important</span>
 							<Link to={`${match.url}/important`}/>
 						</Menu.Item>
-					</Menu.ItemGroup>
+					</Menu.ItemGroup> */}
 				</Menu>
 			</div>
 		)
