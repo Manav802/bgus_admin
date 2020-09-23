@@ -3,13 +3,15 @@ import MailData from 'assets/data/mail.data.json';
 import { ReplySVG } from 'assets/svg/icon';
 import { labels, getFileType } from './MailLabels';
 import AvatarStatus from 'components/shared-components/AvatarStatus';
-import { Tooltip } from 'antd';
+import { Tooltip,Typography,Space } from 'antd';
+
 import { 
 	LeftCircleOutlined, 
 	StarOutlined, 
 	DeleteOutlined, 
 	StarFilled, 
-	DownloadOutlined 
+	DownloadOutlined ,
+	UserOutlined
 } from '@ant-design/icons';
 import CustomIcon from 'components/util-components/CustomIcon'
 
@@ -51,7 +53,8 @@ export class MaiDetail extends Component {
 	}
 
 	render() {
-		const { name, avatar, title, date, to, content } = this.state.detail;
+		const { Text, Link } = Typography;
+		const { name, email, phone, message,serviceName,serviceDescription,date } = this.state.detail;
 		const { attachment } = this.state;
 		return (
 			<div className="mail-detail">
@@ -60,26 +63,32 @@ export class MaiDetail extends Component {
 						<div className="font-size-md mr-3" onClick={()=> {this.back()}}>
 							<LeftCircleOutlined className="mail-detail-action-icon font-size-md ml-0" />
 						</div>
-						<AvatarStatus src={avatar} name={name} subTitle={`To: ${to}`}/>
+						
+						<AvatarStatus icon={<UserOutlined />} name={name} subTitle={`From: ${email}`}/>
 					</div>
 					<div className="mail-detail-action mb-3">
 						<span className="mr-2 font-size-md">{date}</span>
 						<Tooltip title="Reply">
 							<CustomIcon className="mail-detail-action-icon" svg={ReplySVG} />
 						</Tooltip>
-						<Tooltip title="Star" onClick={()=>{this.tick()}}>
+						{/* <Tooltip title="Star" onClick={()=>{this.tick()}}>
 							{this.state.starred? <StarFilled className="mail-detail-action-icon star checked" /> : <StarOutlined className="mail-detail-action-icon star" />}
-						</Tooltip>
-						{attachment.length > 0 ? <Tooltip title="Download Attachment"><DownloadOutlined className="mail-detail-action-icon"/></Tooltip> : null}
+						</Tooltip> */}
+						{/* {attachment.length > 0 ? <Tooltip title="Download Attachment"><DownloadOutlined className="mail-detail-action-icon"/></Tooltip> : null} */}
 						<Tooltip title="Delete">
 							<DeleteOutlined className="mail-detail-action-icon"/>
 						</Tooltip>
 					</div>
 				</div>
 				<div className="mail-detail-content">
-					<h3 className="mb-4">{title}</h3>
-					<div dangerouslySetInnerHTML={{ __html: content }} />
-					<div className="mail-detail-attactment">
+					<h3 className="mb-4">{serviceName}</h3>
+					{/* <div dangerouslySetInnerHTML={{ __html: message }} /> */}
+					<Space direction="vertical">
+					<div><Text strong>Service Description :</Text> {serviceDescription}</div>
+					<div> <Text strong>Message : </Text> {message}</div> 
+					<div> <Text strong>Phone : </Text> {phone}</div>
+					</Space>
+					{/* <div className="mail-detail-attactment">
 						{
 							attachment.map( (elm, i) => (
 								<div className="mail-detail-attactment-item" key={`attachment-file-${i}`}>
@@ -91,7 +100,7 @@ export class MaiDetail extends Component {
 								</div>
 							))
 						}
-					</div>
+					</div> */}
 				</div>
 			</div>
 		)

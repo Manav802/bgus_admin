@@ -250,6 +250,27 @@
 	"serviceDescription": "Base Server (Business), 104 GB Additional Storage , 76 GB Memory,Enabled Daily Backup , 12 Additional vCPUs",
 	"date": "9:35PM"
 		}
+	],"report_errors":[
+		{
+			"id":69,
+			"name": "Sunny Singh",
+	"email": "ssareen@bgunifiedsolutions.net",
+	"phone": 290950000,
+	"message": "Test VM required",
+	"serviceName": "Infrastructure As A Service",
+	"serviceDescription": "Base Server (Business), 104 GB Additional Storage , 76 GB Memory,Enabled Daily Backup , 12 Additional vCPUs",
+	"date": "9:35PM"
+		},
+		{
+			"id":420,
+			"name": "Keysang KumfuMaster",
+	"email": "ssareen@bgunifiedsolutions.net",
+	"phone": 290950000,
+	"message": "Test VM required",
+	"serviceName": "Infrastructure As A Service",
+	"serviceDescription": "Base Server (Business), 104 GB Additional Storage , 76 GB Memory,Enabled Daily Backup , 12 Additional vCPUs",
+	"date": "9:35PM"
+		}
 	],
 	"draft": [
 		
