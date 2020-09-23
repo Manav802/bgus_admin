@@ -118,7 +118,7 @@ export class MailItem extends Component {
 	}
 
 	getCurrentCategory = () => {
-        
+        // Input = Array of objects
 		if(this.props.deleted) {
 			return ContactEnquiryData.contact_enquiries.filter( elm => elm.archived === true )
 		}

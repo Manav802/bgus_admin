@@ -118,7 +118,7 @@ export class MailItem extends Component {
 	}
 
 	getCurrentCategory = () => {
-        
+        // Input = Array of objects
 		if(this.props.deleted) {
 			return MailData.report_errors.filter( elm => elm.archived === true )
 		}
