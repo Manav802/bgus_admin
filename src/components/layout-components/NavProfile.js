@@ -43,14 +43,14 @@ export const NavProfile = ({signOut}) => {
         <div className="d-flex">
           <Avatar size={45} src={profileImg} />
           <div className="pl-3">
-            <h4 className="mb-0">Charlie Howard</h4>
-            <span className="text-muted">Frontend Developer</span>
+            <h4 className="mb-0">Saurabh Sareen</h4>
+            <span className="text-muted">BGUS</span>
           </div>
         </div>
       </div>
       <div className="nav-profile-body">
         <Menu>
-          {menuItem.map((el, i) => {
+          {/* {menuItem.map((el, i) => {
             return (
               <Menu.Item key={i}>
                 <a href={el.path}>
@@ -59,7 +59,7 @@ export const NavProfile = ({signOut}) => {
                 </a>
               </Menu.Item>
             );
-          })}
+          })} */}
           <Menu.Item key={menuItem.legth + 1} onClick={e => signOut()}>
             <span>
               <LogoutOutlined className="mr-3"/>

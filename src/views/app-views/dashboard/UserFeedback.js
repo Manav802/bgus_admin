@@ -177,7 +177,7 @@ export class MailItem extends Component {
 						<div>
 							{	hasSelected? 
 								<div>
-									<Dropdown  overlay={
+									{/* <Dropdown  overlay={
 										<Menu>
 											{
 												labels.map( elm => (
@@ -195,17 +195,17 @@ export class MailItem extends Component {
 										<span className="mail-list-action-icon ml-0" onClick={e => e.preventDefault()}>
 											<TagOutlined />
 										</span>
-									</Dropdown>
-									<span className="mail-list-action-icon" onClick={() => {this.massDeleted(this.state.selectedRowKeys)}}>
+									</Dropdown> */}
+									<span className="mail-list-action-icon ml-0" onClick={() => {this.massDeleted(this.state.selectedRowKeys)}}>
 										<Tooltip title="Delete">
 											<DeleteOutlined />
 										</Tooltip>
 									</span>
-									<span className="mail-list-action-icon" onClick={() => {this.massStar(this.state.selectedRowKeys)}}>
+									{/* <span className="mail-list-action-icon" onClick={() => {this.massStar(this.state.selectedRowKeys)}}>
 									<Tooltip title="Star">
 										<StarOutlined />
 									</Tooltip>
-								</span>
+								</span> */}
 								</div>
 								:
 								null
