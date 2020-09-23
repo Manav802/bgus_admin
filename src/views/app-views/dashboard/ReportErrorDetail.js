@@ -3,7 +3,7 @@ import MailData from 'assets/data/mail.data.json';
 import { ReplySVG } from 'assets/svg/icon';
 import { labels, getFileType } from './MailLabels';
 import AvatarStatus from 'components/shared-components/AvatarStatus';
-import { Tooltip,Typography,Space } from 'antd';
+import { Tooltip,Typography,Space,List,Divider } from 'antd';
 
 import { 
 	LeftCircleOutlined, 
@@ -53,8 +53,9 @@ export class MaiDetail extends Component {
 	}
 
 	render() {
-		const { Text, Link } = Typography;
-		const { name, email, phone, message,serviceName,serviceDescription,date } = this.state.detail;
+		
+		const { Text, Link,Paragraph } = Typography;
+		const { name, email, phone, error,description,browser,operatingsystem,device,date } = this.state.detail;
 		const { attachment } = this.state;
 		return (
 			<div className="mail-detail">
@@ -81,13 +82,20 @@ export class MaiDetail extends Component {
 					</div>
 				</div>
 				<div className="mail-detail-content">
-					<h3 className="mb-4">{serviceName}</h3>
-					{/* <div dangerouslySetInnerHTML={{ __html: message }} /> */}
+					<h3 className="mb-4">{error}</h3>
+					<div dangerouslySetInnerHTML={{ __html: description}} /> <br/>
 					<Space direction="vertical">
-					<div><Text strong>Service Description :</Text> {serviceDescription}</div>
-					<div> <Text strong>Message : </Text> {message}</div> 
-					<div> <Text strong>Phone : </Text> {phone}</div>
+					<div> <Text strong>Device : </Text> {device}</div>
+					<div> <Text strong>Operating System : </Text> {operatingsystem}</div>
+					<div> <Text strong>Browser : </Text> {browser}</div>
 					</Space>
+					
+					
+					<Divider dashed/>
+					<div> <Text strong>Name : </Text> {name}</div>
+					<div> <Text strong>Email : </Text> {email}</div>
+					<div> <Text strong>Phone : </Text> {phone}</div>
+					
 					{/* <div className="mail-detail-attactment">
 						{
 							attachment.map( (elm, i) => (

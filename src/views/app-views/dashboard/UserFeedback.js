@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import { Table, Avatar, Badge, Tooltip, Dropdown, Menu, Input } from 'antd';
-import { StarOutlined, StarFilled, DeleteOutlined, TagOutlined } from '@ant-design/icons';
+import { StarOutlined, StarFilled, DeleteOutlined, TagOutlined,UndoOutlined } from '@ant-design/icons';
 import userFeedbackData from "assets/data/feedback.json";
 import { labels, getLabelColor } from "./MailLabels";
+import {withRouter} from 'react-router-dom';
 
 export class MailItem extends Component {
 
@@ -119,7 +120,7 @@ export class MailItem extends Component {
 	}
 
 	search = e => {
-		let query = e.target.value;
+		let query = e.target.value.toLowerCase();;
 		let data = []
 		data = this.getCurrentCategory().filter(item => {
 			return query === ''? item : item.name.toLowerCase().includes(query)
@@ -130,27 +131,11 @@ export class MailItem extends Component {
 	}
 
 	getCurrentCategory = () => {
-        const category  = this.props.category;
-        console.log(this.props)
-		if(labels.includes(category)) {
-			return userFeedbackData.inbox.filter( elm => elm.label === category )
+		if(this.props.deleted) {
+			return userFeedbackData.user_feedback.filter( elm => elm.archived === true )
 		}
-		switch (category) {
-			case 'inbox':
-				return userFeedbackData.inbox
-			case 'user_feedback':
-				return userFeedbackData.user_feedback
-			case 'sent':
-				return userFeedbackData.sent
-			case 'draft':
-				return userFeedbackData.draft
-			case 'starred':
-				return  userFeedbackData.inbox.filter( elm => elm.starred )
-			case 'deleted':
-				return  userFeedbackData.deleted
-			default:
-				break;
-		}
+		
+		return userFeedbackData.user_feedback.filter( elm => elm.archived != true )
 	}
 
 	render() {
@@ -196,11 +181,19 @@ export class MailItem extends Component {
 											<TagOutlined />
 										</span>
 									</Dropdown> */}
+									{(this.props.deleted===true) ?
+									<span className="mail-list-action-icon ml-0" onClick={() => {this.massDeleted(this.state.selectedRowKeys)}}>
+										<Tooltip title="Restore">
+											<UndoOutlined />
+										</Tooltip>
+									</span>
+									:
 									<span className="mail-list-action-icon ml-0" onClick={() => {this.massDeleted(this.state.selectedRowKeys)}}>
 										<Tooltip title="Delete">
 											<DeleteOutlined />
 										</Tooltip>
 									</span>
+									}
 									{/* <span className="mail-list-action-icon" onClick={() => {this.massStar(this.state.selectedRowKeys)}}>
 									<Tooltip title="Star">
 										<StarOutlined />
@@ -211,7 +204,7 @@ export class MailItem extends Component {
 								null
 							}
 						</div>
-						<div>
+						<div className="pr-lg-3 pr-2">
 							<Input size="small" placeholder="Search" onChange={e => {this.search(e)}}/>
 						</div>
 					</div> 
@@ -274,8 +267,10 @@ export class MailItem extends Component {
 					onRow={(elm) => {
 						return {
 							onClick: e => {
+								if(this.props.deleted){}
+								else{
 								e.preventDefault()
-								history.push(`${match.url}/${elm.id}`)
+								history.push(`${match.url}/${elm.id}`)}
 							}
 						};
 					}}
@@ -286,4 +281,4 @@ export class MailItem extends Component {
 	}
 }
 
-export default MailItem
+export default withRouter(MailItem)
