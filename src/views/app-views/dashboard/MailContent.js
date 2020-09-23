@@ -1,8 +1,5 @@
 import React, { Component } from 'react'
 import { Route, Switch,BrowserRouter } from 'react-router-dom';
-import MailItem from './MailItem';
-import MailDetail from './MaiDetail';
-import MailCompose from './MailCompose';
 import ServiceQuote from './ServiceQuote'
 import ContactEnquiry from './ContactEnquiry'
 import ReportError from './ReportError'
