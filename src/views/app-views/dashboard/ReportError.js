@@ -127,6 +127,8 @@ export class MailItem extends Component {
 				return MailData.inbox
 			case 'service_quotes':
 				return MailData.service_quotes
+			case 'report_errors':
+				return MailData.report_errors
 			case 'sent':
 				return MailData.sent
 			case 'draft':

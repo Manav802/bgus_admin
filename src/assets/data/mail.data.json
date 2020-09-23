@@ -250,7 +250,8 @@
 	"serviceDescription": "Base Server (Business), 104 GB Additional Storage , 76 GB Memory,Enabled Daily Backup , 12 Additional vCPUs",
 	"date": "9:35PM"
 		}
-	],"report_errors":[
+	],
+	"report_errors":[
 		{
 			"id":69,
 			"name": "Sunny Singh",
