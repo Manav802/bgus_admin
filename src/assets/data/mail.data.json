@@ -237,7 +237,9 @@
 	"phone": 290950000,
 	"message": "Test VM required",
 	"serviceName": "Infrastructure As A Service",
-	"serviceDescription": "Base Server (Business), 104 GB Additional Storage , 76 GB Memory,Enabled Daily Backup , 12 Additional vCPUs",
+	"serviceDescription": [
+		"Base Server (Business)", "104 GB Additional Storage" , "76 GB Memory","Enabled Daily Backup" , "12 Additional vCPUs"
+	  ],
 	"date": "9:35PM"
 		},
 		{
@@ -247,7 +249,9 @@
 	"phone": 290950000,
 	"message": "Test VM required",
 	"serviceName": "Infrastructure As A Service",
-	"serviceDescription": "Base Server (Business), 104 GB Additional Storage , 76 GB Memory,Enabled Daily Backup , 12 Additional vCPUs",
+	"serviceDescription": [
+		"Base Server (Business)", "104 GB Additional Storage" , "76 GB Memory","Enabled Daily Backup" , "12 Additional vCPUs"
+	  ],
 	"date": "9:35PM"
 		}
 	],

@@ -3,7 +3,7 @@ import MailData from 'assets/data/mail.data.json';
 import { ReplySVG } from 'assets/svg/icon';
 import { labels, getFileType } from './MailLabels';
 import AvatarStatus from 'components/shared-components/AvatarStatus';
-import { Tooltip,Typography,Space } from 'antd';
+import { Tooltip,Typography,Space,List,Divider } from 'antd';
 
 import { 
 	LeftCircleOutlined, 
@@ -53,7 +53,8 @@ export class MaiDetail extends Component {
 	}
 
 	render() {
-		const { Text, Link } = Typography;
+		
+		const { Text, Link,Paragraph } = Typography;
 		const { name, email, phone, message,serviceName,serviceDescription,date } = this.state.detail;
 		const { attachment } = this.state;
 		return (
@@ -83,11 +84,24 @@ export class MaiDetail extends Component {
 				<div className="mail-detail-content">
 					<h3 className="mb-4">{serviceName}</h3>
 					{/* <div dangerouslySetInnerHTML={{ __html: message }} /> */}
-					<Space direction="vertical">
-					<div><Text strong>Service Description :</Text> {serviceDescription}</div>
-					<div> <Text strong>Message : </Text> {message}</div> 
+					
+					<List
+						size="small"
+					header={<Text strong>Service Description</Text> }
+					bordered
+					dataSource={serviceDescription}
+					renderItem={item => (
+						<List.Item>
+						 {item}
+						</List.Item>
+					)}/>
+					 <br/>
+					<Paragraph className="ml-2" >{message}</Paragraph>
+					<Divider dashed/>
+					<div> <Text strong>Name : </Text> {name}</div>
+					<div> <Text strong>Email : </Text> {email}</div>
 					<div> <Text strong>Phone : </Text> {phone}</div>
-					</Space>
+					
 					{/* <div className="mail-detail-attactment">
 						{
 							attachment.map( (elm, i) => (

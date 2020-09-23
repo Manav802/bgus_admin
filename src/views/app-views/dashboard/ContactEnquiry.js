@@ -230,12 +230,9 @@ export class MailItem extends Component {
 				className: 'mail-list-content',
 				render: (_, elm) => (
 					<div className=" mail-list-content-msg">
-						{/* <Badge color={getLabelColor(elm.label)}/> */}
-						<span className="font-weight-semibold text-dark ml-1">{elm.from}</span>
+					<span className="font-weight-semibold text-dark ml-1">{elm.subject}</span>
 						<span className="mx-2"> - </span>
-					<span className="font-weight-semibold text-dark ml-1">{elm.title}</span>
-						<span className="mx-2"> - </span>
-						<span className="p mb-0">{this.formatBody(elm.content)}</span>
+						<span className="p mb-0">{this.formatBody(elm.message)}</span>
 					</div>
 				)
 			},

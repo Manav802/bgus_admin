@@ -247,9 +247,8 @@ export class MailItem extends Component {
 						{/* <span className="mx-2"> - </span> */}
 						<span className="font-weight-semibold text-dark ml-1">{this.getEmoji(elm.rating)}</span>
 						<span className="mx-2"> - </span>
-						<span className="font-weight-semibold text-dark ml-1">{elm.title}</span>
-						<span className="mx-2"> - </span>
-						<span className="p mb-0">{this.formatBody(elm.content)}</span>
+						
+						<span className="p mb-0">{this.formatBody(elm.description)}</span>
 					</div>
 				)
 			},

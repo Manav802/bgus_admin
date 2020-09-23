@@ -233,7 +233,7 @@ export class MailItem extends Component {
 						{/* <Badge color={getLabelColor(elm.label)}/> */}
 						<span className="font-weight-semibold text-dark ml-1">{elm.serviceName}</span>
 						<span className="mx-2"> - </span>
-						<span className="p mb-0">{this.formatBody(elm.serviceDescription)}</span>
+						<span className="p mb-0">{this.formatBody(elm.serviceDescription.toString())}</span>
 					</div>
 				)
 			},
